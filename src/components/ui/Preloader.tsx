@@ -35,8 +35,8 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     }
     resize();
 
-    // Generate target positions from text "FAHIM"
-    const text = "FAHIM";
+    // Generate target positions from text "FM"
+    const text = "FM";
     const fontSize = Math.min(window.innerWidth * 0.15, 120);
     ctx.font = `bold ${fontSize}px "Arial Black", Arial, sans-serif`;
     ctx.textAlign = "center";
@@ -82,10 +82,11 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     // Simulate loading progress
     let prog = 0;
     const progressInterval = setInterval(() => {
-      prog += Math.random() * 8 + 2;
+      prog += Math.random() * 4 + 1;
       if (prog >= 100) {
         prog = 100;
         clearInterval(progressInterval);
+        // Hold the formed text for a moment before scattering
         setTimeout(() => {
           setExiting(true);
           // Scatter particles outward
@@ -99,11 +100,11 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
             p.targetY = p.y + Math.sin(angle) * dist;
             p.speed = 0.06 + Math.random() * 0.04;
           });
-          setTimeout(onComplete, 800);
-        }, 400);
+          setTimeout(onComplete, 1200);
+        }, 800);
       }
       setProgress(Math.min(prog, 100));
-    }, 120);
+    }, 150);
 
     let animId: number;
     function animate() {
@@ -113,7 +114,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         p.x += (p.targetX - p.x) * p.speed;
         p.y += (p.targetY - p.y) * p.speed;
 
-        ctx.fillStyle = `rgba(68, 136, 255, ${p.alpha})`;
+        ctx.fillStyle = `rgba(0, 255, 65, ${p.alpha})`;
         ctx.fillRect(p.x, p.y, p.size, p.size);
       });
 
@@ -139,7 +140,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-48">
         <div className="h-[2px] bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#4488ff] transition-all duration-300 ease-out rounded-full"
+            className="h-full bg-[#00ff41] transition-all duration-300 ease-out rounded-full"
             style={{ width: `${progress}%` }}
           />
         </div>

@@ -1,0 +1,90 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.5cm,
+    bottom=1.5cm,
+    left=1.5cm,
+    right=1.5cm,
+    footskip=0.5cm
+]{geometry}
+\usepackage{titlesec, tabularx, array, enumitem, fontawesome5, amsmath, hyperref, bookmark, lastpage, changepage, paracol, ifthen, needspace, iftex}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 102, 204}
+\definecolor{sectionColor}{RGB}{0, 51, 102}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=primaryColor
+}
+\usepackage{charter}
+
+% Formatting:
+\raggedright
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat{\section}{\color{sectionColor}\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\renewcommand{\labelitemi}{\textcolor{primaryColor}{\faCircle}}
+
+% Reduce spacing for itemize
+\setlist[itemize]{topsep=2pt, partopsep=0pt, itemsep=2pt, leftmargin=10pt}
+
+\begin{document}
+
+\begin{center}
+    {\fontsize{22pt}{22pt}\selectfont \textcolor{primaryColor}{Mohamed Fahim}}\\
+    \vspace{3pt}
+    {\textcolor{sectionColor}{4th Year Computer Science Engineering Student}}\\
+    \vspace{3pt}
+    \href{tel:+918129640250}{+91 8129640250} \quad
+    \href{mailto:contact@mdfahim.in}{contact@mdfahim.in} \quad
+    \href{https://github.com/fai-max}{GitHub: @fai-max} \quad
+    \href{https://www.linkedin.com/in/mohamed-fahim-79308829a}{LinkedIn}
+\end{center}
+
+\section{Education}
+\textbf{Vellore Institute of Technology} (B.Tech, Computer Science)\hfill 2021 - Present, Chennai\\
+\textit{CGPA: 8.25 /10}
+
+\textbf{Sri Chaitanya Techno School} (Higher Secondary)\hfill 2019 - 2021, Chennai\\
+\textit{Percentage: 93.4\% (CBSE)}
+
+\textbf{The Pupil Saveetha Eco School} (10th Grade)\hfill 2016 - 2019, Chennai\\
+\textit{Percentage: 84.4\% (CBSE)}
+
+\section{Experience}
+\textbf{TANGEDCO (TNEB) / Sponsored Project}\hfill August 2024 - Present, Chennai\\
+Developing an Android app for employees to manage substation asset data offline with seamless synchronization.
+
+\textbf{Mafkin Robotics / Video Editing \\& Graphic Design Intern}\hfill June - September 2024, Chennai\\
+Hands-on experience with Blender and DaVinci. Successfully completed tasks, demonstrating dedication and curiosity.
+
+\textbf{TechMahindra / Project Intern}\hfill August - October 2023, Bangalore\\
+Developed a recruitment automation system using NLP, AI-driven interview scheduling, and automated candidate evaluation.
+
+\section{Projects}
+\textbf{Booth Calculator} (Self-Developed)\\
+Developed a Booth’s algorithm-based multiplier with an intuitive UI and real-time binary conversion visualization.
+
+\textbf{Glug.} (Ongoing)\\
+An iOS app promoting hydration through short video shares, leaderboards, badges, and challenges.
+
+\section{Skills}
+\textbf{Technologies:} NumPy, Pandas, Tkinter, Discord.py, Django, SpaCy, OpenCV, PyAudio, Android Studio\\
+\textbf{Languages:} Python, Java, C/C++, JavaScript, HTML, CSS, SwiftUI\\
+\textbf{Databases:} MySQL, SQLite\\
+\textbf{Tools:} Linux (Fedora, Ubuntu), Git, GitHub\\
+\textbf{Coursework:} Machine Learning, Cryptography, IoT, DSA, OOP, MATLAB, RStudio
+
+\section{Personal Development}
+\begin{itemize}
+    \item Proficient in video editing and design using Adobe tools and Blender.
+    \item Media Head in The Linux Club, FilmSoc, and VRClub.
+\end{itemize}
+
+\section{Languages}
+English, Hindi, Tamil, Malayalam, French, German
+
+\end{document}
