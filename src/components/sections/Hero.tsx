@@ -295,18 +295,25 @@ export function Hero({ loaded = false }: { loaded?: boolean }) {
         </p>
       </div>
 
-      {/* Morpheus + Pill images — pushed down for spacing from text */}
+      {/* Morpheus + Pill images — container shrink-wraps the image so pills
+          positioned at %/% track the image bounds regardless of viewport. */}
       <div
         ref={morpheusRef}
-        className="relative z-10 w-full max-w-[900px] mx-auto animate-fade-in-up"
+        className="relative z-10 animate-fade-in-up"
         style={{ animationDelay: "0.4s", opacity: 0, animationFillMode: "forwards", marginTop: "2rem" }}
       >
         {/* Morpheus image (mirrored so teal hand is left, red hand is right) */}
         <img
           src="/morpheus.png"
           alt=""
-          className="w-full h-auto select-none pointer-events-none"
-          style={{ transform: "scaleX(-1)" }}
+          className="select-none pointer-events-none block"
+          style={{
+            maxWidth: "min(900px, calc(100vw - 1.5rem))",
+            maxHeight: "calc(100vh - 10rem)",
+            width: "auto",
+            height: "auto",
+            transform: "scaleX(-1)",
+          }}
           draggable={false}
         />
 
