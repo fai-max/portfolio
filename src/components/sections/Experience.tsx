@@ -138,16 +138,16 @@ function CreativeCards({ experiences }: { experiences: ExperienceType[] }) {
             }}>{exp.role}</span>
 
             {/* Description — offset right */}
-            <p style={{
+            <p className="exp-creative-desc" style={{
               fontSize: "1rem", lineHeight: 1.7, color: "var(--text-secondary)",
-              maxWidth: "32rem", marginTop: "1.5rem", marginLeft: "2rem",
+              marginTop: "1.5rem",
               fontFamily: "var(--font-display)", fontWeight: 300,
             }}>{exp.creativeDescription}</p>
 
             {/* Projects inline */}
             {exp.projects.length > 0 && (
-              <p className="font-[family-name:var(--font-mono)]" style={{
-                fontSize: "0.7rem", color: "var(--text-muted)", marginTop: "1.5rem", marginLeft: "2rem",
+              <p className="font-[family-name:var(--font-mono)] exp-creative-projects" style={{
+                fontSize: "0.7rem", color: "var(--text-muted)", marginTop: "1.5rem",
               }}>
                 {exp.projects.map(p => p.name).join(" / ")}
               </p>

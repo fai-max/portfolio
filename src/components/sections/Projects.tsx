@@ -58,7 +58,7 @@ export function Projects() {
             </div>
 
             {/* Bento Grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
+            <div className="grid-responsive-2">
               {filteredProjects.map((project, i) => (
                 <div
                   key={project.id}

@@ -77,8 +77,7 @@ export function Contact() {
               </div>
 
               {/* CLI body — everything is inline text, inputs blend in */}
-              <form onSubmit={handleSubmit} className="font-[family-name:var(--font-mono)]" style={{
-                padding: "1.25rem 1.5rem", fontSize: "0.82rem", lineHeight: "2.2",
+              <form onSubmit={handleSubmit} className="font-[family-name:var(--font-mono)] terminal-cli" style={{
                 color: "rgba(255,255,255,0.5)",
               }}>
                 <div>
@@ -89,7 +88,7 @@ export function Contact() {
                   <span>echo </span><span style={{ color: "#6a9eff" }}>$NAME</span>
                 </div>
                 <div style={{ position: "relative" }}>
-                  {!formState.name && <span className="cursor-blink" style={{ position: "absolute", left: 0, top: 0, color: "var(--accent-1)", fontSize: "0.82rem", lineHeight: "2.2", pointerEvents: "none" }}>_</span>}
+                  {!formState.name && <span className="cursor-blink" style={{ position: "absolute", left: 0, top: 0, color: "var(--accent-1)", fontSize: "inherit", lineHeight: "inherit", pointerEvents: "none" }}>_</span>}
                   <input
                     type="text" value={formState.name}
                     onChange={(e) => setFormState((s) => ({ ...s, name: e.target.value }))}
@@ -97,7 +96,7 @@ export function Contact() {
                     style={{
                       width: "100%", background: "transparent", border: "none",
                       padding: 0, color: "#e0e4ec", outline: "none",
-                      fontSize: "0.82rem", lineHeight: "2.2", caretColor: "var(--accent-1)",
+                      fontSize: "inherit", lineHeight: "inherit", caretColor: "var(--accent-1)",
                     }}
                   />
                 </div>
@@ -110,7 +109,7 @@ export function Contact() {
                   <span>echo </span><span style={{ color: "#6a9eff" }}>$EMAIL</span>
                 </div>
                 <div style={{ position: "relative" }}>
-                  {!formState.email && <span className="cursor-blink" style={{ position: "absolute", left: 0, top: 0, color: "var(--accent-1)", fontSize: "0.82rem", lineHeight: "2.2", pointerEvents: "none" }}>_</span>}
+                  {!formState.email && <span className="cursor-blink" style={{ position: "absolute", left: 0, top: 0, color: "var(--accent-1)", fontSize: "inherit", lineHeight: "inherit", pointerEvents: "none" }}>_</span>}
                   <input
                     type="email" value={formState.email}
                     onChange={(e) => setFormState((s) => ({ ...s, email: e.target.value }))}
@@ -118,7 +117,7 @@ export function Contact() {
                     style={{
                       width: "100%", background: "transparent", border: "none",
                       padding: 0, color: "#e0e4ec", outline: "none",
-                      fontSize: "0.82rem", lineHeight: "2.2", caretColor: "var(--accent-1)",
+                      fontSize: "inherit", lineHeight: "inherit", caretColor: "var(--accent-1)",
                     }}
                   />
                 </div>
@@ -131,7 +130,7 @@ export function Contact() {
                   <span>cat &lt;&lt; </span><span style={{ color: "#e8a060" }}>EOF</span><span style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.72rem", marginLeft: "1rem" }}># write your message below</span>
                 </div>
                 <div style={{ position: "relative" }}>
-                  {!formState.message && <span className="cursor-blink" style={{ position: "absolute", left: 0, top: 0, color: "var(--accent-1)", fontSize: "0.82rem", lineHeight: "2.2", pointerEvents: "none" }}>_</span>}
+                  {!formState.message && <span className="cursor-blink" style={{ position: "absolute", left: 0, top: 0, color: "var(--accent-1)", fontSize: "inherit", lineHeight: "inherit", pointerEvents: "none" }}>_</span>}
                   <textarea
                     value={formState.message}
                     onChange={(e) => setFormState((s) => ({ ...s, message: e.target.value }))}
@@ -139,7 +138,7 @@ export function Contact() {
                     style={{
                       width: "100%", background: "transparent", border: "none",
                       padding: 0, color: "#e0e4ec", outline: "none",
-                      fontSize: "0.82rem", lineHeight: "2.2", resize: "none",
+                      fontSize: "inherit", lineHeight: "inherit", resize: "none",
                       caretColor: "var(--accent-1)",
                     }}
                   />
@@ -153,7 +152,7 @@ export function Contact() {
                   <span style={{ color: "rgba(255,255,255,0.25)" }}>$ </span>
                   <button type="submit" className="font-[family-name:var(--font-mono)]" style={{
                     background: "transparent", border: "none", padding: 0,
-                    color: "#e0e4ec", fontSize: "0.82rem", cursor: "pointer",
+                    color: "#e0e4ec", fontSize: "inherit", cursor: "pointer",
                     textDecoration: "underline", textUnderlineOffset: "3px",
                     textDecorationColor: "rgba(255,255,255,0.2)",
                   }}>
@@ -164,7 +163,7 @@ export function Contact() {
             </div>
 
             {/* Social links — compact row */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem" }}>
+            <div className="grid-responsive-3">
               {[
                 {
                   label: "GitHub", sub: "@fai-max", href: SOCIAL_LINKS.github,
@@ -260,7 +259,7 @@ export function Contact() {
           ].map((input) => (
             <div key={input.field}>
               <label className="font-[family-name:var(--font-mono)]" style={{
-                display: "block", fontSize: "0.6rem", letterSpacing: "0.25em",
+                display: "block", fontSize: "clamp(0.6rem, 2.2vw, 0.7rem)", letterSpacing: "0.25em",
                 textTransform: "uppercase", color: "rgba(0,0,0,0.5)", marginBottom: "0.375rem",
               }}>{input.label}</label>
               <input
@@ -270,7 +269,7 @@ export function Contact() {
                 style={{
                   width: "100%", background: "transparent", border: "none",
                   borderBottom: "2px solid rgba(0,0,0,0.2)", padding: "0.75rem 0",
-                  color: "#0d0d0d", outline: "none", fontSize: "1.1rem",
+                  color: "#0d0d0d", outline: "none", fontSize: "clamp(1rem, 3vw, 1.1rem)",
                   transition: "border-color 0.2s",
                 }}
                 onFocus={(e) => e.currentTarget.style.borderBottomColor = "#0d0d0d"}
@@ -280,7 +279,7 @@ export function Contact() {
           ))}
           <div>
             <label className="font-[family-name:var(--font-mono)]" style={{
-              display: "block", fontSize: "0.6rem", letterSpacing: "0.25em",
+              display: "block", fontSize: "clamp(0.6rem, 2.2vw, 0.7rem)", letterSpacing: "0.25em",
               textTransform: "uppercase", color: "rgba(0,0,0,0.5)", marginBottom: "0.375rem",
             }}>Message</label>
             <textarea
@@ -290,7 +289,7 @@ export function Contact() {
               style={{
                 width: "100%", background: "transparent", border: "none",
                 borderBottom: "2px solid rgba(0,0,0,0.2)", padding: "0.75rem 0",
-                color: "#0d0d0d", outline: "none", fontSize: "1.1rem", resize: "none",
+                color: "#0d0d0d", outline: "none", fontSize: "clamp(1rem, 3vw, 1.1rem)", resize: "none",
                 transition: "border-color 0.2s",
               }}
               onFocus={(e) => e.currentTarget.style.borderBottomColor = "#0d0d0d"}
@@ -312,7 +311,7 @@ export function Contact() {
         </form>
 
         {/* Social links — dark on red, horizontal */}
-        <div style={{ display: "flex", gap: "2rem", marginTop: "4rem", paddingTop: "2rem", borderTop: "1px solid rgba(0,0,0,0.15)" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1.25rem 2rem", marginTop: "4rem", paddingTop: "2rem", borderTop: "1px solid rgba(0,0,0,0.15)" }}>
           {[
             { label: "GitHub", href: SOCIAL_LINKS.github },
             { label: "LinkedIn", href: SOCIAL_LINKS.linkedin },

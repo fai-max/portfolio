@@ -93,7 +93,7 @@ export function Skills() {
                 }}>
                   $ ls {group.category.toLowerCase().replace(/ & /g, "-")}/
                 </h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.5rem 1.5rem" }}>
+                <div className="grid-responsive-2" style={{ gap: "0.5rem 1.5rem" }}>
                   {group.items.map((skill) => (
                     <div
                       key={skill.name}
@@ -101,9 +101,9 @@ export function Skills() {
                       style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
                     >
                       <span
-                        className="font-[family-name:var(--font-mono)]"
+                        className="font-[family-name:var(--font-mono)] skill-name-col"
                         style={{
-                          fontSize: "0.8rem", flexShrink: 0, width: "8rem",
+                          fontSize: "0.8rem", flexShrink: 0,
                           color: skill.isHighlighted ? "#e87f36" : "var(--text-primary)",
                           fontWeight: skill.isHighlighted ? 700 : 400,
                         }}

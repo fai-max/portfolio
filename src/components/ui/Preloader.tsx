@@ -137,7 +137,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
       }`}
     >
       <canvas ref={canvasRef} className="absolute inset-0" />
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-48">
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-40 sm:w-48">
         <div className="h-[2px] bg-white/10 rounded-full overflow-hidden">
           <div
             className="h-full bg-[#00ff41] transition-all duration-300 ease-out rounded-full"

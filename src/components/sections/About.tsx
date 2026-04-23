@@ -91,7 +91,7 @@ function TechAbout() {
           </div>
 
           {/* CLI body */}
-          <div className="font-[family-name:var(--font-mono)]" style={{ padding: "1.25rem 1.5rem", fontSize: "0.82rem", lineHeight: "2.2", color: "rgba(255,255,255,0.5)" }}>
+          <div className="font-[family-name:var(--font-mono)] terminal-cli" style={{ color: "rgba(255,255,255,0.5)" }}>
             <div>
               <span style={{ color: "var(--accent-1)" }}>fahim@portfolio</span>
               <span style={{ color: "rgba(255,255,255,0.25)" }}>:</span>
@@ -186,7 +186,7 @@ function CreativeAbout() {
       <span className="bg-text font-[family-name:var(--font-display)]" style={{ top: "-3rem", right: "0" }}>ABOUT</span>
 
       {/* Vertical section label */}
-      <div className="about-reveal" style={{
+      <div className="about-reveal about-vertical-label" style={{
         position: "absolute", left: "-2rem", top: "0",
         writingMode: "vertical-rl", transform: "rotate(180deg)",
       }}>
@@ -207,7 +207,7 @@ function CreativeAbout() {
         </p>
 
         {/* Full bio + right column */}
-        <div style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: "4rem" }}>
+        <div className="grid-about-split">
           <div>
             <p style={{
               fontSize: "1rem", lineHeight: 1.8, color: "var(--text-secondary)",

@@ -162,17 +162,19 @@ export function Hero({ loaded = false }: { loaded?: boolean }) {
           </>
         )}
 
-        <div style={{
-          position: "relative", zIndex: 2, width: "100%",
-          maxWidth: "72rem", margin: "0 auto",
-          padding: isTech ? "0 2rem" : "0 2rem 0 4rem",
-          textAlign: isTech ? "center" as const : "left" as const,
-        }}>
+        <div
+          className={isTech ? "" : "hero-creative-pad"}
+          style={{
+            position: "relative", zIndex: 2, width: "100%",
+            maxWidth: "72rem", margin: "0 auto",
+            padding: isTech ? "0 1.25rem" : undefined,
+            textAlign: isTech ? "center" as const : "left" as const,
+          }}
+        >
           {/* Label */}
-          <p className="section-label animate-fade-in-up" style={{
+          <p className={`section-label animate-fade-in-up${isTech ? "" : " hero-creative-label"}`} style={{
             fontFamily: "var(--font-mono)",
             color: isTech ? "#7a84a0" : "#cc2222",
-            fontSize: isTech ? undefined : "0.6rem",
             letterSpacing: isTech ? undefined : "0.3em",
             marginBottom: "1.5rem",
             opacity: 0, animationDelay: "0.15s", animationFillMode: "forwards",
@@ -207,7 +209,7 @@ export function Hero({ loaded = false }: { loaded?: boolean }) {
             color: isTech ? "#7a84a0" : "#9a8e84",
             fontSize: isTech ? "1.1rem" : "1.25rem",
             fontWeight: isTech ? 400 : 300,
-            maxWidth: isTech ? "36rem" : "28rem",
+            maxWidth: isTech ? "min(36rem, calc(100vw - 2.5rem))" : "min(28rem, calc(100vw - 2.5rem))",
             margin: isTech ? "0 auto 3rem" : "0 0 3rem",
             lineHeight: 1.6,
             fontStyle: isTech ? "normal" : "italic",
@@ -314,12 +316,10 @@ export function Hero({ loaded = false }: { loaded?: boolean }) {
           onClick={() => handleSelect("tech")}
           onMouseEnter={() => setHovered("tech")}
           onMouseLeave={() => setHovered(null)}
-          className={`pill-photo pill-photo-blue absolute transition-all duration-500 origin-bottom ${
+          className={`pill-photo pill-photo-blue pill-photo-blue-pos absolute transition-all duration-500 origin-bottom ${
             hovered === "creative" ? "opacity-30" : ""
           } ${choosing ? "pointer-events-none" : ""}`}
           style={{
-            left: "28%",
-            bottom: "22%",
             transform: `translateX(-50%) ${hovered === "tech" ? "scale(1.12) translateY(-6px)" : hovered === "creative" ? "scale(0.92)" : "scale(1)"}`,
           }}
           aria-label="Choose the blue pill"
@@ -333,12 +333,10 @@ export function Hero({ loaded = false }: { loaded?: boolean }) {
           onClick={() => handleSelect("creative")}
           onMouseEnter={() => setHovered("creative")}
           onMouseLeave={() => setHovered(null)}
-          className={`pill-photo pill-photo-red absolute transition-all duration-500 origin-bottom ${
+          className={`pill-photo pill-photo-red pill-photo-red-pos absolute transition-all duration-500 origin-bottom ${
             hovered === "tech" ? "opacity-30" : ""
           } ${choosing ? "pointer-events-none" : ""}`}
           style={{
-            left: "72%",
-            bottom: "22%",
             transform: `translateX(-50%) ${hovered === "creative" ? "scale(1.12) translateY(-6px)" : hovered === "tech" ? "scale(0.92)" : "scale(1)"}`,
           }}
           aria-label="Choose the red pill"
@@ -353,7 +351,7 @@ export function Hero({ loaded = false }: { loaded?: boolean }) {
         style={{
           position: "absolute", bottom: "1.5rem", left: "50%", transform: "translateX(-50%)",
           color: "rgba(255,255,255,0.3)", fontSize: "0.75rem", fontStyle: "italic",
-          letterSpacing: "0.05em", maxWidth: "28rem", padding: "0 1rem",
+          letterSpacing: "0.05em", maxWidth: "min(28rem, calc(100vw - 2rem))", padding: "0 1rem",
         }}
       >
         &ldquo;I can only show you the door.<br />You&rsquo;re the one that has to walk through it.&rdquo;

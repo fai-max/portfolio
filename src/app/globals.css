@@ -286,8 +286,14 @@ body {
 .section {
   position: relative;
   z-index: 1;
-  padding: 3.5rem 1.5rem;
+  padding: 3rem 1.25rem;
   background: transparent !important;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding: 3.5rem 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -299,6 +305,121 @@ body {
 @media (min-width: 1536px) {
   .section {
     padding: 6rem 8rem;
+  }
+}
+
+/* ===== Responsive helpers ===== */
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .grid-responsive-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .grid-responsive-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-about-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  .grid-about-split {
+    grid-template-columns: 3fr 2fr;
+    gap: 4rem;
+  }
+}
+
+.terminal-cli {
+  font-size: 0.72rem;
+  line-height: 1.9;
+  padding: 1rem 1rem;
+}
+@media (min-width: 640px) {
+  .terminal-cli {
+    font-size: 0.82rem;
+    line-height: 2.2;
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.terminal-cli-inline {
+  font-size: 0.72rem;
+  line-height: 1.9;
+}
+@media (min-width: 640px) {
+  .terminal-cli-inline {
+    font-size: 0.82rem;
+    line-height: 2.2;
+  }
+}
+
+.exp-creative-desc {
+  margin-left: 0;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .exp-creative-desc {
+    margin-left: 2rem;
+    max-width: 32rem;
+  }
+}
+
+.exp-creative-projects {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .exp-creative-projects {
+    margin-left: 2rem;
+  }
+}
+
+.about-vertical-label {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .about-vertical-label {
+    display: block;
+  }
+}
+
+.hero-creative-pad {
+  padding: 0 1.25rem;
+}
+@media (min-width: 640px) {
+  .hero-creative-pad {
+    padding: 0 2rem 0 4rem;
+  }
+}
+
+.hero-creative-label {
+  font-size: 0.7rem;
+}
+@media (min-width: 640px) {
+  .hero-creative-label {
+    font-size: 0.6rem;
+  }
+}
+
+.skill-name-col {
+  width: 7rem;
+}
+@media (min-width: 640px) {
+  .skill-name-col {
+    width: 8rem;
   }
 }
 
@@ -403,6 +524,27 @@ body {
 .pill-photo-red {
   filter: drop-shadow(0 0 10px rgba(255, 50, 50, 0.35)) drop-shadow(0 0 35px rgba(255, 50, 50, 0.12));
   animation: pill-pulse-red 3.5s ease-in-out infinite;
+}
+
+/* Pill placement tracks Morpheus hand positions — pulled inward on mobile
+   so both pills remain fully visible within a narrow viewport. */
+.pill-photo-blue-pos {
+  left: 20%;
+  bottom: 18%;
+}
+.pill-photo-red-pos {
+  left: 80%;
+  bottom: 18%;
+}
+@media (min-width: 640px) {
+  .pill-photo-blue-pos {
+    left: 28%;
+    bottom: 22%;
+  }
+  .pill-photo-red-pos {
+    left: 72%;
+    bottom: 22%;
+  }
 }
 
 .pill-photo-blue:hover {
